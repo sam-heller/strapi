@@ -1,0 +1,18 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+      "ghcr.io/devcontainers/features/common-utils:1": {},
+      "ghcr.io/devcontainers/features/node:16": {},
+      "ghcr.io/devcontainers-contrib/features/jshint:1": {}
+    }, 
+    "remoteEnv": {
+        "PATH" :"${containerEnv:PATH}"
+    },
+    "containerEnv" : {
+        "DATABASE_TYPE": "mysql",
+        "DATABASE_USER": "root",
+        "DATABASE_PASS": "NoWorries.ThisContainerIsIsolated",   
+        "NODE_VERSION": "16"
+    }
+}
+

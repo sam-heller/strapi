@@ -1,0 +1,18 @@
+version: '3'
+services:
+  strapiDB:
+    container_name: strapiDB
+    platform: linux/amd64 
+    restart: unless-stopped
+    env_file: .env
+    image: mysql:14.5-alpine
+    environment:
+      MYSQL_USER: ${DATABASE_USERNAME}
+      MYSQL_PASS: ${DATABASE_PASSWORD}
+      MYSQL_DB: ${DATABASE_NAME}
+    volumes:
+      - strapi-data:/var/lib/postgresql/data/ 
+    ports:
+      - '5432:5432'
+    networks:
+      - strapi
